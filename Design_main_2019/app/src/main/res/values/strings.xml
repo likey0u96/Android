@@ -1,0 +1,4 @@
+<resources>
+    //앱바의 이름을 바꾸는 곳
+    <string name="app_name">Smart Lighting Main</string>
+</resources>
