@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         {parent, itemView, position, id->
             accounts[position].aMonthHasPassed()
             adapter.notifyDataSetChanged()
+
         }
 
     }
