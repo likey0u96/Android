@@ -21,7 +21,6 @@ class AccountAdapter(val context: Context, val accounts: Array<CheckingAccount>)
         //일단은 index를 returng함 (long 타입을 반환하므로 to.long()을 사용해서 타입캐스팅
 
     }
-
     override fun getItem(idx: Int): Any {
         return accounts[idx]
         //idx번째의 accounts를 반환
