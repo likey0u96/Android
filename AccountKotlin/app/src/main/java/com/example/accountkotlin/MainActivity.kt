@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         var list : ListView =  findViewById(R.id.account_list)
         // var list  =  findViewById<ListView>(R.id.account_list)
 
-        var adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
-            accounts)
+        var adapter = AccountAdapter(this, accounts)
 
         list.setAdapter(adapter)
         list.adapter = adapter
