@@ -1,5 +1,6 @@
 package com.example.accountkotlin
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -25,9 +26,13 @@ class MainActivity : AppCompatActivity() {
         list.setAdapter(adapter)
         list.adapter = adapter
 
-        list.setOnItemClickListener()
-        {parent, itemView, position, id->
+        list.setOnItemClickListener() {parent, itemView, position, id->
+            val detailIntent = Intent(this, AccountDetailActivity::class.java) //현제 activity에서 정보를 만듦(this)
+                                                                    //자바 가상머신에 해당하는 클래스 -> java호환되게 써야하므로 알아두기
+            detailIntent.putExtra("Account", accounts[position]) //객체를 intent에 넣어서 넘기다
+            startActivityForResult(detailIntent, 1) //결과적으로 넘기는 것
             accounts[position].aMonthHasPassed()
+            println("$position" + accounts[position])
             adapter.notifyDataSetChanged()
 
         }
