@@ -1,8 +1,9 @@
 package com.example.accountkotlin
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_account_detail.*
+import kotlinx.android.synthetic.main.activity_account_detail.* //이것을 해줌으로써 activity에 연결된 xml파일의 veiw의 id를 변수처럼 사용가능
 
 class AccountDetailActivity : AppCompatActivity() {
 
@@ -49,5 +50,15 @@ class AccountDetailActivity : AppCompatActivity() {
 
         }
 
+
+    }
+
+    override fun onBackPressed() {
+        val resultIntent = Intent(this, MainActivity::class.java) //mainActivity로 데이터 보내주기
+        resultIntent.putExtra("AccountBack", account)
+
+        setResult(1, resultIntent)
+
+        super.onBackPressed()
     }
 }
