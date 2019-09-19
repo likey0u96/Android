@@ -8,13 +8,13 @@ class CheckingAccount(accountNumber: String, balance: Int = 0, interest: Double 
     Account(accountNumber, balance), Parcelable {
     val interest = interest
 
-    fun withdtaw(amount: Int) {
+    fun withdtaw(amount: Int) { //출금
         balance -= amount
     }
 
-    fun deposit(amount: Int): Boolean {
+    fun deposit(amount: Int): Boolean { //입금
         if (amount < balance) {
-            balance -= amount
+            balance += amount
             return true
         } else {
             return false
