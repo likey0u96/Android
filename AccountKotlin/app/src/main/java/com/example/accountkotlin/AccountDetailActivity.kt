@@ -15,7 +15,6 @@ class AccountDetailActivity : AppCompatActivity() {
         text_account_number.text = account.accountNumber
         text_balance.text = account.balance.toString()
         text_interest.text = account.interest.toString()
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
